@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: LinkedIn Profile API
+  version: 1.0.0
+  description: >
+    Returns structured JSON for a LinkedIn profile by calling LinkedIn's internal
+    Voyager API with a server-side session cookie. Backed by a single personal
+    session, so all /api routes require an x-api-key.
+servers:
+  - url: https://your-deployment.example.com
+paths:
+  /health:
+    get:
+      summary: Liveness + session status (open, no api key)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  uptime: { type: integer }
+                  sessionConfigured: { type: boolean }
+                  sessionValid: { type: boolean, nullable: true }
+  /api/v1/profile:
+    get:
+      summary: Fetch a profile by URL
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: query
+          name: url
+          required: true
+          schema: { type: string }
+          example: https://www.linkedin.com/in/williamhgates
+        - in: query
+          name: refresh
+          required: false
+          schema: { type: string, enum: ['true', 'false'] }
+          description: Bypass the cache.
+      responses:
+        '200':
+          description: Profile found
+          headers:
+            X-Cache:
+              schema: { type: string, enum: [HIT, MISS] }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ProfileResponse' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+        '429': { $ref: '#/components/responses/Error' }
+        '502': { $ref: '#/components/responses/Error' }
+    post:
+      summary: Fetch a profile by URL (JSON body)
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [url]
+              properties:
+                url: { type: string }
+                refresh: { type: boolean }
+      responses:
+        '200':
+          description: Profile found
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ProfileResponse' }
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+  responses:
+    Error:
+      description: Error envelope
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  code: { type: string }
+                  message: { type: string }
+                  requestId: { type: string }
+  schemas:
+    ProfileResponse:
+      type: object
+      description: See docs/example-response.json for a full example.
+      properties:
+        data:
+          type: object
+          description: The profile. Every field is nullable or defaults to []; keys are never omitted.
+        meta:
+          type: object
+          properties:
+            scrapedAt: { type: string, format: date-time }
+            cached: { type: boolean }
+            durationMs: { type: integer }
+            source: { type: string, enum: [voyager] }
+            sectionsUnavailable:
+              type: array
+              items: { type: string }

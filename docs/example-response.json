@@ -1,0 +1,105 @@
+{
+  "data": {
+    "profileUrl": "https://www.linkedin.com/in/williamhgates",
+    "publicIdentifier": "williamhgates",
+    "urn": "urn:li:fsd_profile:ACoAAA8BYqEBCGLg_vT_ca6mMEqkpp9nVffJ3hc",
+    "memberUrn": "urn:li:member:251749025",
+    "firstName": "Bill",
+    "lastName": "Gates",
+    "fullName": "Bill Gates",
+    "headline": "Chair, Gates Foundation and Founder, Breakthrough Energy",
+    "location": {
+      "raw": "Seattle, Washington, United States",
+      "countryCode": "US"
+    },
+    "about": "Chair of the Gates Foundation. Founder of Breakthrough Energy. Co-founder of Microsoft. Voracious reader. Avid traveler. Active blogger.",
+    "industry": "Philanthropy",
+    "profilePicture": {
+      "url": "https://media.licdn.com/dms/image/v2/D5603AQF-RYZP55jmXA/profile-displayphoto-shrink_800_800/B56ZRi8g.aGsAc-/0/1736826818808?e=1789603200&v=beta&t=GxLFjoH4mCSRCmjFjlSicYo4x_fhdKp4801w4OtVZPI",
+      "width": 800,
+      "height": 800,
+      "expiresAt": "2026-09-17T00:00:00.000Z"
+    },
+    "backgroundImage": {
+      "url": "https://media.licdn.com/dms/image/v2/D5616AQEjhPbTCeblYg/profile-displaybackgroundimage-shrink_350_1400/B56ZcytR5SGsAg-/0/1748902420393?e=1789603200&v=beta&t=l5pS6rYe3TohSB2mDEyzqYCSIorJne8Nuea3PIeuKyU",
+      "width": 1400,
+      "height": 350,
+      "expiresAt": "2026-09-17T00:00:00.000Z"
+    },
+    "experience": [
+      {
+        "title": "Founder",
+        "company": "Breakthrough Energy",
+        "companyUrl": "https://www.linkedin.com/company/breakthrough-energy/",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQFRMYiQN7-2kA/company-logo_400_400/B56ZoI4SGPI0AY-/0/1761085563539/breakthrough_energy_logo?e=1789603200&v=beta&t=J1pw3Ehh0eD3uFwY981iDMmgx_BlCSzGxRSa-v0Mvtw",
+        "employmentType": null,
+        "location": null,
+        "startDate": "2015",
+        "endDate": null,
+        "isCurrent": true,
+        "durationMonths": 140,
+        "description": null
+      },
+      {
+        "title": "Co-chair",
+        "company": "Gates Foundation",
+        "companyUrl": "https://www.linkedin.com/company/gates-foundation/",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQEgMqqFTd40Tg/company-logo_400_400/company-logo_400_400/0/1736784969376/bill__melinda_gates_foundation_logo?e=1789603200&v=beta&t=njmrIsThlq9SHjcKSP-UW2Wp6CTCcXIDePfAuuJksSE",
+        "employmentType": null,
+        "location": null,
+        "startDate": "2000",
+        "endDate": null,
+        "isCurrent": true,
+        "durationMonths": 320,
+        "description": null
+      },
+      {
+        "title": "Co-founder",
+        "company": "Microsoft",
+        "companyUrl": "https://www.linkedin.com/company/microsoft/",
+        "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQH32RJQCl3dDQ/company-logo_400_400/B56ZYQ0mrGGoAc-/0/1744038948046/microsoft_logo?e=1789603200&v=beta&t=VLtcj1EBOJV2LA4_rVYP9zGho3r23V0MTXGH5p2Z7gw",
+        "employmentType": null,
+        "location": null,
+        "startDate": "1975",
+        "endDate": null,
+        "isCurrent": true,
+        "durationMonths": 620,
+        "description": null
+      }
+    ],
+    "education": [
+      {
+        "school": "Harvard University",
+        "schoolUrl": "https://www.linkedin.com/school/harvard-university/",
+        "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQF5t62bcL0e9g/company-logo_400_400/company-logo_400_400/0/1631318058235?e=1789603200&v=beta&t=SE8PWAL-6i7RwVo18fkBahHsorDliETMDsUI5Qg1Fqg",
+        "degree": null,
+        "fieldOfStudy": null,
+        "startYear": 1973,
+        "endYear": 1975,
+        "grade": null,
+        "description": null
+      },
+      {
+        "school": "Lakeside School",
+        "schoolUrl": "https://www.linkedin.com/school/lakeside-school/",
+        "schoolLogo": "https://media.licdn.com/dms/image/v2/D560BAQGFmOQmzpxg9A/company-logo_400_400/company-logo_400_400/0/1683732883164/lakeside_school_logo?e=1789603200&v=beta&t=BhZ4_hlFRbpwmzIE7Q0qWdvTNUz8d_-TbM5-O0D0Kzs",
+        "degree": null,
+        "fieldOfStudy": null,
+        "startYear": null,
+        "endYear": null,
+        "grade": null,
+        "description": null
+      }
+    ],
+    "skills": [],
+    "certifications": [],
+    "languages": []
+  },
+  "meta": {
+    "scrapedAt": "2026-08-29T07:09:56.263Z",
+    "cached": false,
+    "durationMs": 1840,
+    "source": "voyager",
+    "sectionsUnavailable": []
+  }
+}
