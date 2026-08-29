@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+
+# Secrets — never commit
+.env
+.env.local
+*.storageState.json
+
+# Private captures (own-profile raw dumps may contain personal data)
+tests/fixtures/raw/*private*
+scratch/
