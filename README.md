@@ -5,8 +5,10 @@ profile URL, it authenticates to LinkedIn with a server-side session cookie, cal
 LinkedIn's internal **Voyager** API directly (no headless browser), normalizes the
 response, and returns a clean, stable JSON contract.
 
+**Live:** `https://linkedin-profile-api-3usm.onrender.com` (free tier — first request after idle takes ~30–50s to wake).
+
 ```bash
-curl -s "https://YOUR_DEPLOYMENT/api/v1/profile?url=https://www.linkedin.com/in/williamhgates" \
+curl -s "https://linkedin-profile-api-3usm.onrender.com/api/v1/profile?url=https://www.linkedin.com/in/williamhgates" \
   -H "x-api-key: YOUR_API_KEY" | jq .data.fullName
 # "Bill Gates"
 ```
