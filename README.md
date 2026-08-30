@@ -131,6 +131,17 @@ docker build -t linkedin-profile-api .
 docker run -p 3000:3000 --env-file .env linkedin-profile-api
 ```
 
+### Deploy (Render, free tier)
+
+The repo includes a [`render.yaml`](render.yaml) blueprint. In the Render dashboard:
+**New → Blueprint → connect this repo**. Render reads the blueprint, then prompts for
+the three secrets (`API_KEY`, `LI_AT`, `JSESSIONID`). It builds with
+`npm ci && npm run build` and serves `npm start`, with `/health` as the health check.
+
+Note: the free tier sleeps after ~15 min idle, so the first request after a lull takes
+~30–50s to wake. Fine for evaluation; upgrade the plan or add an external pinger to keep
+it warm if that matters.
+
 ---
 
 ## API reference

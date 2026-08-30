@@ -1,0 +1,31 @@
+# Render Blueprint — deploys this repo as a free web service.
+# Dashboard: New -> Blueprint -> connect this repo. Render reads this file,
+# then prompts for the three secret env vars (API_KEY, LI_AT, JSESSIONID).
+services:
+  - type: web
+    name: linkedin-profile-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: CACHE_TTL_SECONDS
+        value: "43200"
+      - key: DAILY_CAP
+        value: "200"
+      - key: REQUEST_GAP_MS
+        value: "2500"
+      # Secrets — entered in the Render dashboard, never committed.
+      - key: API_KEY
+        sync: false
+      - key: LI_AT
+        sync: false
+      - key: JSESSIONID
+        sync: false
