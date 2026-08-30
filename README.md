@@ -5,11 +5,14 @@ profile URL, it authenticates to LinkedIn with a server-side session cookie, cal
 LinkedIn's internal **Voyager** API directly (no headless browser), normalizes the
 response, and returns a clean, stable JSON contract.
 
-**Live:** `https://linkedin-profile-api-3usm.onrender.com` (free tier — first request after idle takes ~30–50s to wake).
+**Live:** `https://linkedin-profile-api-3usm.onrender.com`
+**API key for evaluation:** `random-string-1234567890` (send as the `x-api-key` header)
+
+> Note: hosted on Render's free tier, so the **first request after ~15 min idle takes ~30–50s** to wake the instance; it's fast after that.
 
 ```bash
 curl -s "https://linkedin-profile-api-3usm.onrender.com/api/v1/profile?url=https://www.linkedin.com/in/williamhgates" \
-  -H "x-api-key: YOUR_API_KEY" | jq .data.fullName
+  -H "x-api-key: random-string-1234567890" | jq .data.fullName
 # "Bill Gates"
 ```
 
