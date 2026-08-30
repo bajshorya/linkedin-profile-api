@@ -1,20 +1,16 @@
-# Render Blueprint — deploys this repo as a free web service.
-# Dashboard: New -> Blueprint -> connect this repo. Render reads this file,
-# then prompts for the three secret env vars (API_KEY, LI_AT, JSESSIONID).
+# Render Blueprint — deploys this repo as a free web service using the Dockerfile.
+# Dashboard: New -> Blueprint -> connect this repo (or create a Web Service and let
+# Render auto-detect the Dockerfile). It then prompts for the three secret env vars.
 services:
   - type: web
     name: linkedin-profile-api
-    runtime: node
+    runtime: docker
+    dockerfilePath: ./Dockerfile
     plan: free
     region: oregon
-    # --include=dev so TypeScript/tsx are present even with NODE_ENV=production.
-    buildCommand: npm ci --include=dev && npm run build
-    startCommand: npm start
     healthCheckPath: /health
     autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
       - key: LOG_LEVEL
         value: info
       - key: CACHE_TTL_SECONDS
